@@ -1,11 +1,10 @@
-#import constants
+import random
 
-from maze.game.casting import Actor
-from maze.game.directing import Director
+from maze.game.casting.actor import Actor
+from maze.game.directing.director import Director
 
 def main():
-    
-    pass
+    point = Actor()
 
 
 """Rules: player moves though the maze to the goal.
