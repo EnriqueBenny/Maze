@@ -23,7 +23,7 @@ def main():
     points.set_text("")
     points.set_font_size(FONT_SIZE)
     points.set_color(WHITE)
-    points.set_position(Point(CELL_SIZE, 0))
+    points.set_position(Actor(CELL_SIZE, 0))
     cast.add_actor("points", points)
 
     # create the robot
