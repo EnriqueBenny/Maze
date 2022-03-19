@@ -4,6 +4,11 @@ from maze.game.casting.actor import Actor
 from maze.game.directing.director import Director
 from maze.game.shared.color import Color
 
+"""Rules: player moves though the maze to the goal.
+If the player touches a wall, the maze is reset, and the player loses a life.
+
+Code from cycle and greed has been recycled."""
+
 FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
@@ -19,6 +24,8 @@ GEM_COUNT = 35
 STONE_COUNT = 30
 
 def main():
+    cast = Director()
+
     points = Actor()
     points.set_text("")
     points.set_font_size(FONT_SIZE)
@@ -29,10 +36,11 @@ def main():
     # create the robot
     x = int(MAX_X / 2)
     y = 570
-    position = Actor(x, y)
+    points = Actor(x, y)
 
 
-"""Rules: player moves though the maze to the goal.
-If the player touches a wall, the maze is reset, and the player loses a life.
+    # Calling main
+    if __name__ == "__main__":
+        main()
 
-Code from cycle and greed has been recycled."""
+
