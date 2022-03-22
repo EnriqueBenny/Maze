@@ -18,7 +18,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
-        self._points = 500
+        self._points = 3
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
