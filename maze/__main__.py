@@ -1,8 +1,9 @@
 import random
 
-from maze.game.casting.actor import Actor
-from maze.game.directing.director import Director
-from maze.game.shared.color import Color
+from game.casting.actor import Actor
+from game.directing.director import Director
+from game.shared.color import Color
+from game import constants
 
 """Rules: player moves though the maze to the goal.
 If the player touches a wall, the maze is reset, and the player loses a life.
@@ -34,8 +35,8 @@ def main():
     cast.add_actor("points", points)
 
     # create the robot
-    x = int(MAX_X / 2)
-    y = 570
+    x = 1
+    y = 1
     points = Actor(x, y)
 
 
