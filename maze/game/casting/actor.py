@@ -1,12 +1,13 @@
-import constants
 from game.shared.color import Color
 from game.shared.point import Point
+
 
 class Actor:
     """A visible, moveable thing that participates in the game. 
     
     The responsibility of Actor is to keep track of its appearance, position and velocity in 2d 
     space.
+
     Attributes:
         _text (string): The text to display
         _font_size (int): The font size to use.
@@ -18,7 +19,7 @@ class Actor:
     def __init__(self):
         """Constructs a new Actor."""
         self._text = ""
-        self._font_size = 30
+        self._font_size = 15
         self._color = Color(255, 255, 255)
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
@@ -29,7 +30,7 @@ class Actor:
         Returns:
             Color: The actor's text color.
         """
-        return self._color 
+        return self._color
 
     def get_font_size(self):
         """Gets the actor's font size.
@@ -63,7 +64,7 @@ class Actor:
         """
         return self._velocity
     
-    def move_next(self):
+    def move_next(self, max_x, max_y):
         """Moves the actor to its next position according to its velocity. Will wrap the position 
         from one side of the screen to the other when it reaches the given maximum x and y values.
         
@@ -71,10 +72,10 @@ class Actor:
             max_x (int): The maximum x value.
             max_y (int): The maximum y value.
         """
-        x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
-        y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
+        x = (self._position.get_x() + self._velocity.get_x()) % max_x
+        y = (self._position.get_y() + self._velocity.get_y()) % max_y
         self._position = Point(x, y)
-
+        
     def set_color(self, color):
         """Updates the color to the given one.
         
