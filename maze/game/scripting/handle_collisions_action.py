@@ -25,18 +25,9 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        
-        snake1 = cast.get_first_actor("snake1")
-        snake2 = cast.get_first_actor("snake2")
-        
         if not self._is_game_over:
-            snake1.grow_tail(1,constants.RED)
-            snake2.grow_tail(1,constants.GREEN)
             self._handle_segment_collision(cast)
             self._handle_game_over(cast)
-        else: 
-            snake1.grow_tail(1,constants.WHITE)
-            snake2.grow_tail(1,constants.WHITE)
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
@@ -44,31 +35,12 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        score1 = cast.get_first_actor("score1")
-        score2 = cast.get_first_actor("score2")
-        snake1 = cast.get_first_actor("snake1")
-        snake2 = cast.get_first_actor("snake2")
-        head1 = snake1.get_segments()[0]
-        head2 = snake2.get_segments()[0]
-        body1 = snake1.get_segments()[1:]
-        body2 = snake2.get_segments()[1:]
-
-        segments = []
-        for piece in body1:
-            segments.append(piece)
-        for piece in body2:
-            segments.append(piece)
-
+        player = cast.get_first_actor("player")
+        goal = cast.get_first_actor("goal")
         
-        for segment in segments:
-            if head1.get_position().equals(segment.get_position()):
-                self._is_game_over = True
-                score2.add_points(1)
-                score2.set_text("Player Two: %d" % (score2.get_points()))
-            if head2.get_position().equals(segment.get_position()):
-                self._is_game_over = True
-                score1.add_points(1)
-                score1.set_text("Player One: %d" % (score1.get_points()))
+        if player.get_position().equals(goal.get_position()):
+            self._is_game_over = True
+        
         
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.

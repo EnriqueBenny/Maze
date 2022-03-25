@@ -2,10 +2,10 @@ from game.shared.color import Color
 
 
 FRAME_RATE = 15
-MAX_X = 900
-MAX_Y = 600
-CELL_SIZE = 15
-FONT_SIZE = 15
+MAX_X = 800
+MAX_Y = 400
+CELL_SIZE = 20
+FONT_SIZE = 20
 COLUMNS = 40
 ROWS = 20
 CAPTION = "Maze"

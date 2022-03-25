@@ -27,8 +27,12 @@ class DrawActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        
+        # stores the player and goal from the cast as a variable
+        player = cast.get_first_actor("player")
+        goal = cast.get_first_actor("goal")
 
-
+        # clears the buffer then draws the actors and flushes the buffer
         self._video_service.clear_buffer()
+        self._video_service.draw_actor(player)
+        self._video_service.draw_actor(goal)
         self._video_service.flush_buffer()
