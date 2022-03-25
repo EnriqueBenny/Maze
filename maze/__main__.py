@@ -18,8 +18,7 @@ from game.services.keyboard_service import KeyboardService
 from game.services.video_service import VideoService
 
 """Rules: player moves though the maze to the goal.
-If the player touches a wall, the maze is reset, and the player loses a life.
-Code from greed has been recycled."""
+If the player touches a wall, the maze is reset, and the player loses a life."""
 
 
 def main():

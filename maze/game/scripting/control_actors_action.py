@@ -32,37 +32,22 @@ class ControlActorsAction(Action):
         """
         # left
         if self._keyboard_service.is_key_down('a'):
-            self._direction1 = Point(-constants.CELL_SIZE, 0)
+            self._direction = Point(-constants.CELL_SIZE, 0)
         
         # right
-        if self._keyboard_service.is_key_down('d'):
-            self._direction1 = Point(constants.CELL_SIZE, 0)
+        elif self._keyboard_service.is_key_down('d'):
+            self._direction = Point(constants.CELL_SIZE, 0)
         
         # up
-        if self._keyboard_service.is_key_down('w'):
-            self._direction1 = Point(0, -constants.CELL_SIZE)
+        elif self._keyboard_service.is_key_down('w'):
+            self._direction = Point(0, -constants.CELL_SIZE)
         
         # down
-        if self._keyboard_service.is_key_down('s'):
-            self._direction1 = Point(0, constants.CELL_SIZE)
+        elif self._keyboard_service.is_key_down('s'):
+            self._direction = Point(0, constants.CELL_SIZE)
         
-        snake1 = cast.get_first_actor("snake1")
-        snake1.turn_head(self._direction1)
+        else:
+            self._direction = Point(0,0)
 
-        if self._keyboard_service.is_key_down('j'):
-            self._direction2 = Point(-constants.CELL_SIZE, 0)
-        
-        # right
-        if self._keyboard_service.is_key_down('l'):
-            self._direction2 = Point(constants.CELL_SIZE, 0)
-        
-        # up
-        if self._keyboard_service.is_key_down('i'):
-            self._direction2 = Point(0, -constants.CELL_SIZE)
-        
-        # down
-        if self._keyboard_service.is_key_down('k'):
-            self._direction2 = Point(0, constants.CELL_SIZE)
-        
-        snake2 = cast.get_first_actor("snake2")
-        snake2.turn_head(self._direction2)
+        player = cast.get_first_actor("player")
+        player.move_next(self._direction1)

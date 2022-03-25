@@ -1,6 +1,6 @@
 from game.shared.color import Color
 from game.shared.point import Point
-
+import constants
 
 class Actor:
     """A visible, moveable thing that participates in the game. 
@@ -19,8 +19,8 @@ class Actor:
     def __init__(self):
         """Constructs a new Actor."""
         self._text = ""
-        self._font_size = 15
-        self._color = Color(255, 255, 255)
+        self._font_size = constants.FONT_SIZE
+        self._color = constants.WHITE
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
 
