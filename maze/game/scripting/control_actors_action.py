@@ -20,8 +20,7 @@ class ControlActorsAction(Action):
             keyboard_service (KeyboardService): An instance of KeyboardService.
         """
         self._keyboard_service = keyboard_service
-        self._direction1 = Point(0, -1 * constants.CELL_SIZE)
-        self._direction2 = Point(0, -1 * constants.CELL_SIZE)
+        self._direction = Point(0,0)
 
     def execute(self, cast, script):
         """Executes the control actors action.
@@ -50,4 +49,4 @@ class ControlActorsAction(Action):
             self._direction = Point(0,0)
 
         player = cast.get_first_actor("player")
-        player.move_next(self._direction1)
+        player.set_velocity(self._direction)
