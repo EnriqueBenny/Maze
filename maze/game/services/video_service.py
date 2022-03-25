@@ -1,7 +1,4 @@
 import pyray
-import tkinter as tk
-from tkinter import *
-
 
 class VideoService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state 
@@ -109,19 +106,3 @@ class VideoService:
             pyray.draw_line(0, y, self._width, y, pyray.GRAY)
         for x in range(0, self._width, self._cell_size):
             pyray.draw_line(x, 0, x, self._height, pyray.GRAY)
-
-    def _game_over(self):
-        """Displays a game over screen using tkinter."""
-        root = tk.Tk()
-        T = tk.Label(root, text="Game Over!", height=5, width=25, font=("Arial", 60), fg="red", bg="black")
-        T.pack()
-        T.after(3000, lambda:root.destroy())
-        tk.mainloop()
-
-    def _victory(self):
-        """Displays a game over screen using tkinter."""
-        root = tk.Tk()
-        T = tk.Label(root, text="You Win!", height=5, width=25, font=("Arial", 60), fg="gold", bg="white")
-        T.pack()
-        T.after(3000, lambda:root.destroy())
-        tk.mainloop()
