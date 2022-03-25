@@ -59,7 +59,7 @@ class Director:
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         player.move_next(max_x, max_y)
-        If the points hit 0, then the 'game over' screen is displayed.
+        # If the points hit 0, then the 'game over' screen is displayed.
         if points <= 0:
             self._video_service._game_over()
             self._points = 3
