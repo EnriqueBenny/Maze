@@ -38,10 +38,18 @@ class HandleCollisionsAction(Action):
         """
         player = cast.get_first_actor("player")
         goal = cast.get_first_actor("goal")
+        wall = cast.get_first_actor("wall")
+        segments = wall.get_segments()
         
         if player.get_position().equals(goal.get_position()):
             self._is_game_over = True
             self._game_over_text = "Congratulations!"
+        
+        for segment in segments:
+            if player.get_position().equals(segment.get_position()):
+                self._is_game_over = True
+                self._game_over_text = "Game Over!"
+
         
         
     def _handle_game_over(self, cast):
