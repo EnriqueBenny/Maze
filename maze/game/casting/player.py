@@ -1,4 +1,4 @@
-from actor import Actor
+from game.casting.actor import Actor
 class Player(Actor):
 
     def __init__(self):

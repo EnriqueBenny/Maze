@@ -1,8 +1,4 @@
-
 import constants
-import constants
-
-import random
 
 from game.casting.cast import Cast
 from game.casting.actor import Actor
@@ -28,26 +24,26 @@ Code from greed has been recycled."""
 
 def main():
     cast = Cast()
-
-    points = Actor()
-    points.set_text("")
-    points.set_font_size(FONT_SIZE)
-    points.set_color(WHITE)
-    points.set_position(Actor(CELL_SIZE, 0))
-    cast.add_actor("points", points)
+    cast.add_actor("wall", Wall())
+    cast.add_actor("player", Player())
+    cast.add_actor("goal", Goal())
 
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()
 
-    # create the robot
-    x = 1
-    y = 1
-    points = Actor(x, y)
+    script = Script()
+    script.add_action("input", ControlActorsAction(keyboard_service))
+    script.add_action("update", MoveActorsAction())
+    script.add_action("update", HandleCollisionsAction())
+    script.add_action("output", DrawActorsAction(video_service))
+
+    director = Director(video_service)
+    director.start_game(cast, script)
 
 
-    # Calling main
-    if __name__ == "__main__":
-        main()
+# Calling main
+if __name__ == "__main__":
+    main()
 
 
