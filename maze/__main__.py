@@ -1,8 +1,17 @@
 import random
+from game.casting.cast import Cast
 from game.casting.actor import Actor
 from game.directing.director import Director
 from game.shared.color import Color
-from game import constants
+from game.scripting.script import Script
+from game.scripting.control_actors_action import ControlActorsAction
+from game.scripting.move_actors_action import MoveActorsAction
+from game.scripting.handle_collisions_action import HandleCollisionsAction
+from game.scripting.draw_actors_action import DrawActorsAction
+from game.directing.director import Director
+from game.services.keyboard_service import KeyboardService
+
+import constants
 
 """Rules: player moves though the maze to the goal.
 If the player touches a wall, the maze is reset, and the player loses a life.
@@ -23,7 +32,7 @@ RED = Color(255,0,0)
 #STONE_COUNT = 30
 
 def main():
-    cast = Director()
+    cast = Cast()
 
     points = Actor()
     points.set_text("")
