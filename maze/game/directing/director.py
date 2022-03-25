@@ -60,23 +60,23 @@ class Director:
         max_y = self._video_service.get_height()
         player.move_next(max_x, max_y)
         #If the points hit 0, then the 'game over' screen is displayed.
-        if points <= 0:
-            self._video_service._game_over()
-            self._points = 500
-        #Adds points to the player's total if they make contact with a gem.
-        for gem in gems:
-            gem.fall(max_y)
-            if player.get_position().equals(gem.get_position()):
-                self._points += 10
-            if gem.get_position().get_y() == 0:
-                gem.change_x()
-        #Subtracts points from the player's total if the player makes contact with a stone.
-        for stone in stones:
-            stone.fall(max_y)
-            if player.get_position().equals(stone.get_position()):
-                self._points -= 50
-            if stone.get_position().get_y() == 0:
-                stone.change_x()
+        # if points <= 0:
+        #     self._video_service._game_over()
+        #     self._points = 3
+        # #Adds points to the player's total if they make contact with a gem.
+        # for gem in gems:
+        #     gem.fall(max_y)
+        #     if player.get_position().equals(gem.get_position()):
+        #         self._points += 10
+        #     if gem.get_position().get_y() == 0:
+        #         gem.change_x()
+        # #Subtracts points from the player's total if the player makes contact with a stone.
+        # for stone in stones:
+        #     stone.fall(max_y)
+        #     if player.get_position().equals(stone.get_position()):
+        #         self._points -= 50
+        #     if stone.get_position().get_y() == 0:
+        #         stone.change_x()
 
         
 
