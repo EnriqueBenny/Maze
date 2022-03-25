@@ -2,13 +2,8 @@ from actor import Actor
 class Wall(Actor):
 
     def __init__(self):
-<<<<<<< Updated upstream
-        """Handles Wall segments
-    """
-=======
         pass
-
-
+    
     def walls_template(self):
 
         # maze (w, is a wall, s, is a space, G is goal):
@@ -36,4 +31,3 @@ class Wall(Actor):
         ninteenth_line = [s, s, s, s, w, s, w, s, s, w, w, s, s, s, s, w, w, s, w, s, w, w, s, s, s, s, s, s, s, s, s, s, w, s, s, s, s, s, w, s]
         twenty_line = [w, s, w, s, w, w, w, s, w, w, w, s, w, w, s, w, w, s, w, s, w, w, w, w, w, w, w, w, w, w, w, s, w, w, w, w, w, s, s, G]
         #w, s, w, s, s, s, s, s, s, s, s, s, s, w, s, s, s, s, w, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, s, w, w, s, G]
->>>>>>> Stashed changes
