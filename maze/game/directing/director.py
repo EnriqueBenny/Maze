@@ -51,8 +51,7 @@ class Director:
         """
         banner = cast.get_first_actor("points")
         player = cast.get_first_actor("player")
-        gems = cast.get_actors("gems")
-        stones = cast.get_actors("stones")
+        walls = cast.get_actors("walls")
         points = self._points
 
         banner.set_text("Points %s" % (points))
