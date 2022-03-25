@@ -5,8 +5,8 @@ class Player(Actor):
 
     def __init__(self):
         super().__init__()
-        self._position = Point(10* constants.CELL_SIZE,10 * constants.CELL_SIZE)
-        self._text = "O"
+        self._position = Point(0* constants.CELL_SIZE,0 * constants.CELL_SIZE)
+        self._text = "@"
         #self._text = """
         # O 
         #/|\\

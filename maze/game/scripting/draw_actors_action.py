@@ -30,9 +30,17 @@ class DrawActorsAction(Action):
         # stores the player and goal from the cast as a variable
         player = cast.get_first_actor("player")
         goal = cast.get_first_actor("goal")
+        walls = cast.get_first_actor("wall")
+        segments = walls.get_segments()
+        
+
+
+        message = cast.get_actors("message")
 
         # clears the buffer then draws the actors and flushes the buffer
         self._video_service.clear_buffer()
         self._video_service.draw_actor(player)
+        self._video_service.draw_actors(segments)
         self._video_service.draw_actor(goal)
+        self._video_service.draw_actors(message,True)
         self._video_service.flush_buffer()

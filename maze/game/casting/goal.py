@@ -7,5 +7,5 @@ class Goal(Actor):
         """Handles Goal segments
         """
         super().__init__()
-        self._position = Point(-10* constants.CELL_SIZE,-10 * constants.CELL_SIZE)
+        self._position = Point(39* constants.CELL_SIZE,19* constants.CELL_SIZE)
         self._text = "G"

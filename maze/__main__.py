@@ -27,10 +27,8 @@ def main():
     cast.add_actor("player", Player())
     cast.add_actor("goal", Goal())
 
-    # creates 402 wall segment objects, for maintainability I wonder if we should make this a constant or
-    # even make it editable if we can make the maze change per run.
-    for wall_count in range(402):
-        cast.add_actor("wall", Wall())
+    # creates ONE wall object for cast. the wall segments are done in wall.py
+    cast.add_actor("wall", Wall())
 
     # Get the services for the actions and director
     keyboard_service = KeyboardService()
