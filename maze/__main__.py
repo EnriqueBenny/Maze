@@ -6,7 +6,6 @@ from game import constants
 
 """Rules: player moves though the maze to the goal.
 If the player touches a wall, the maze is reset, and the player loses a life.
-
 Code from greed has been recycled."""
 
 FRAME_RATE = 12
