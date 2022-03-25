@@ -1,6 +1,6 @@
 from actor import Actor
-class Wall(Actor):
+class Goal(Actor):
 
     def __init__(self):
-        """Handles Wall segments
+        """Handles Goal segments
     """
