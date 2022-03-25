@@ -17,19 +17,6 @@ import constants
 If the player touches a wall, the maze is reset, and the player loses a life.
 Code from greed has been recycled."""
 
-FRAME_RATE = 12
-MAX_X = 900
-MAX_Y = 600
-CELL_SIZE = 15
-FONT_SIZE = 15
-COLS = 60
-ROWS = 40
-CAPTION = "Maze"
-WHITE = Color(255, 255, 255)
-GREEN = Color(0,255,0)
-RED = Color(255,0,0)
-#GEM_COUNT = 35
-#STONE_COUNT = 30
 
 def main():
     cast = Cast()
