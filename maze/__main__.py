@@ -1,5 +1,4 @@
 import random
-
 from game.casting.actor import Actor
 from game.directing.director import Director
 from game.shared.color import Color
@@ -8,7 +7,7 @@ from game import constants
 """Rules: player moves though the maze to the goal.
 If the player touches a wall, the maze is reset, and the player loses a life.
 
-Code from cycle and greed has been recycled."""
+Code from greed has been recycled."""
 
 FRAME_RATE = 12
 MAX_X = 900
@@ -21,8 +20,8 @@ CAPTION = "Maze"
 WHITE = Color(255, 255, 255)
 GREEN = Color(0,255,0)
 RED = Color(255,0,0)
-GEM_COUNT = 35
-STONE_COUNT = 30
+#GEM_COUNT = 35
+#STONE_COUNT = 30
 
 def main():
     cast = Director()
