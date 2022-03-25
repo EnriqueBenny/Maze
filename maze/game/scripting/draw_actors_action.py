@@ -30,11 +30,13 @@ class DrawActorsAction(Action):
         # stores the player and goal from the cast as a variable
         player = cast.get_first_actor("player")
         goal = cast.get_first_actor("goal")
+        # collecting the single actor wall
         walls = cast.get_first_actor("wall")
+        # grabbing the segments from the actor wall
         segments = walls.get_segments()
         
 
-
+        # The game ending message that hasnt been created
         message = cast.get_actors("message")
 
         # clears the buffer then draws the actors and flushes the buffer

@@ -36,15 +36,17 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
+        # collects all the actors needed
         player = cast.get_first_actor("player")
         goal = cast.get_first_actor("goal")
         wall = cast.get_first_actor("wall")
         segments = wall.get_segments()
         
+        # checks for goal and player collision 
         if player.get_position().equals(goal.get_position()):
             self._is_game_over = True
             self._game_over_text = "Congratulations!"
-        
+        # checks for wall and player collision for each wall segment
         for segment in segments:
             if player.get_position().equals(segment.get_position()):
                 self._is_game_over = True
@@ -62,7 +64,7 @@ class HandleCollisionsAction(Action):
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
-
+            # Creates the message actor so draw_actors_action can draw it. 
             message = Actor()
             message.set_text(self._game_over_text)
             message.set_position(position)
