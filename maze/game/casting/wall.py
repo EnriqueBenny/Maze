@@ -3,4 +3,4 @@ class Wall(Actor):
 
     def __init__(self):
         """Handles Wall segments
-    """
+    """ 
