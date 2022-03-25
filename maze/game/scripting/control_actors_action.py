@@ -20,7 +20,7 @@ class ControlActorsAction(Action):
             keyboard_service (KeyboardService): An instance of KeyboardService.
         """
         self._keyboard_service = keyboard_service
-        self._direction = Point(0,0)
+        self._velocity = Point(0,0)
 
     def execute(self, cast, script):
         """Executes the control actors action.
@@ -31,22 +31,23 @@ class ControlActorsAction(Action):
         """
         # left
         if self._keyboard_service.is_key_down('a'):
-            self._direction = Point(-constants.CELL_SIZE, 0)
+            self._velocity = Point(-constants.CELL_SIZE, 0)
         
         # right
         elif self._keyboard_service.is_key_down('d'):
-            self._direction = Point(constants.CELL_SIZE, 0)
+            self._velocity = Point(constants.CELL_SIZE, 0)
         
         # up
         elif self._keyboard_service.is_key_down('w'):
-            self._direction = Point(0, -constants.CELL_SIZE)
+            self._velocity = Point(0, -constants.CELL_SIZE)
         
         # down
         elif self._keyboard_service.is_key_down('s'):
-            self._direction = Point(0, constants.CELL_SIZE)
+            self._velocity = Point(0, constants.CELL_SIZE)
         
         else:
-            self._direction = Point(0,0)
+            self._velocity = Point(0,0)
 
+        # Grabs the player actor in the cast and sets the velocity of it to whatever you input was
         player = cast.get_first_actor("player")
-        player.set_velocity(self._direction)
+        player.set_velocity(self._velocity)

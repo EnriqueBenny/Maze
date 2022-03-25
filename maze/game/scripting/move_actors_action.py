@@ -17,6 +17,7 @@ class MoveActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
+        # Grabs every actor(object) in the game and moves it according to where their respective velocities are. 
         actors = cast.get_all_actors()
         for actor in actors:
             actor.move_next()
