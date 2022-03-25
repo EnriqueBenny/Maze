@@ -4,8 +4,7 @@ class Wall(Actor):
     def __init__(self):
         """Handles Wall segments"""
         pass
-
-
+    
     def walls_template(self):
 
         # (w, is a wall, s, is a space, G is goal):
