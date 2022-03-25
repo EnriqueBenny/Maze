@@ -24,9 +24,11 @@ Code from greed has been recycled."""
 
 def main():
     cast = Cast()
-    cast.add_actor("wall", Wall())
     cast.add_actor("player", Player())
     cast.add_actor("goal", Goal())
+
+    for wall_count in range(402):
+        cast.add_actor("wall", Wall())
 
     # start the game
     keyboard_service = KeyboardService()
