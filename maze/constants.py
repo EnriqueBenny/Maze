@@ -4,10 +4,10 @@ from game.shared.color import Color
 FRAME_RATE = 15
 MAX_X = 900
 MAX_Y = 600
-CELL_1IZE = 15
-FONT_1IZE = 15
-COL1 = 40
-ROW1 = 20
+CELL_SIZE = 15
+FONT_SIZE = 15
+COLUMNS = 40
+ROWS = 20
 CAPTION = "Maze"
 WHITE = Color(255, 255, 255)
 GREEN = Color(0,255,0)
