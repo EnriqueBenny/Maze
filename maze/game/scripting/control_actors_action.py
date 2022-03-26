@@ -45,6 +45,7 @@ class ControlActorsAction(Action):
         elif self._keyboard_service.is_key_down('s'):
             self._velocity = Point(0, constants.CELL_SIZE)
         
+        # stationary if not moving
         else:
             self._velocity = Point(0,0)
 
