@@ -1,7 +1,7 @@
 from game.shared.color import Color
 
 
-FRAME_RATE = 15
+FRAME_RATE = 10
 MAX_X = 800
 MAX_Y = 400
 CELL_SIZE = 20
