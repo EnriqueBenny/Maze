@@ -20,6 +20,7 @@ If the player touches a wall, the maze is reset, and the player loses a life."""
 
 
 def main():
+    """ Starts the game and sets up the cast and script"""
     # sets up the cast and adds 1 player and 1 goal object to it. 
     cast = Cast()
 
