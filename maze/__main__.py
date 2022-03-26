@@ -3,8 +3,6 @@ import constants
 from game.casting.cast import Cast
 from game.casting.actor import Actor
 from game.casting.wall import Wall
-from game.casting.goal import Goal
-from game.casting.player import Player
 from game.directing.director import Director
 from game.shared.color import Color
 from game.shared.point import Point
@@ -24,8 +22,20 @@ If the player touches a wall, the maze is reset, and the player loses a life."""
 def main():
     # sets up the cast and adds 1 player and 1 goal object to it. 
     cast = Cast()
-    cast.add_actor("player", Player())
-    cast.add_actor("goal", Goal())
+
+    # Creates the player actor
+    player = Actor()
+    player.set_position(Point(0* constants.CELL_SIZE,0 * constants.CELL_SIZE))
+    player.set_text("@")
+
+    # Creates the goal actor
+    goal = Actor()
+    goal.set_position(Point(39* constants.CELL_SIZE,19 * constants.CELL_SIZE))
+    goal.set_text("G")
+
+    # Adds the actors to the cast
+    cast.add_actor("player", player)
+    cast.add_actor("goal", goal)
 
     # creates ONE wall object for cast. the wall segments are done in wall.py
     cast.add_actor("wall", Wall())
